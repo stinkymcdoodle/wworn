@@ -6,6 +6,21 @@
     <title>Washed 'N Worn</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/images/WasherWhite.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
     <p>&nbsp;</p>
@@ -13,10 +28,13 @@
     <p style="font-family:verdana">the safe haven for my dreams and thoughts</p>
     <p style="font-family:verdana">currently a work in progress, more designs and art soon.</p>
     <p>&nbsp;</p>
-    <img src="/images/WWornweb.png" alt="Logo"
-    display: block;
-    height="auto"
-    width="auto"
-    >
+    <div class="imgbox">
+        <img src="/images/WWornweb.png" alt="Logo" class="center-fit"
+        display: block;
+        height="auto"
+        width="auto"
+        >
+    </div>
 </body>
+
 </html>
