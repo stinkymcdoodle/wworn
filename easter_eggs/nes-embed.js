@@ -71,6 +71,8 @@ function audio_callback(event) {
 }
 
 function keyboard(callback, event) {
+    if (event.keyCode === 32) return; // Ignore space bar
+
     var player = 1;
     switch (event.keyCode) {
         case 38: // UP
@@ -85,14 +87,13 @@ function keyboard(callback, event) {
         case 39: // RIGHT
             callback(player, jsnes.Controller.BUTTON_RIGHT);
             break;
-        case 13: // Enter
+        case 13: // Enter (Start Button)
             callback(player, jsnes.Controller.BUTTON_START);
             break;
         default:
             break;
     }
 }
-
 function nes_init(canvas_id) {
     var canvas = document.getElementById(canvas_id);
     canvas_ctx = canvas.getContext("2d");
