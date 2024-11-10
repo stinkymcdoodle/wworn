@@ -97,17 +97,25 @@ function keyboard(callback, event) {
 function nes_init(canvas_id) {
     var canvas = document.getElementById(canvas_id);
     canvas_ctx = canvas.getContext("2d");
-    image = canvas_ctx.getImageData(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 
+    // Set the canvas size to a smaller width and height
+    canvas.width = SCREEN_WIDTH / 2;  // Half the width
+    canvas.height = SCREEN_HEIGHT / 2; // Half the height
+
+    // Scale the context to shrink the game content
+    canvas_ctx.scale(0.5, 0.5); // 50% of original size
+
+    image = canvas_ctx.getImageData(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+    
     canvas_ctx.fillStyle = "black";
     canvas_ctx.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-    // Allocate framebuffer array.
+    
+    // Allocate framebuffer array
     var buffer = new ArrayBuffer(image.data.length);
     framebuffer_u8 = new Uint8ClampedArray(buffer);
     framebuffer_u32 = new Uint32Array(buffer);
-
-    // Setup audio.
+    
+    // Setup audio
     var audio_ctx = new window.AudioContext();
     var script_processor = audio_ctx.createScriptProcessor(AUDIO_BUFFERING, 0, 2);
     script_processor.onaudioprocess = audio_callback;
