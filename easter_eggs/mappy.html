@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Embedding Example</title>
+    <title>Mappy Emulator</title>
     
-    <!-- Include the jsNES library -->
+    <!-- Include jsNES library -->
     <script src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
     
-    <!-- Your custom JavaScript file (ensure this path is correct) -->
+    <!-- Include your nes-embed.js file (ensure this path is correct) -->
     <script src="nes-embed.js"></script>
     
-    <!-- Script to load the Mappy ROM on page load -->
+    <!-- Load the ROM on page load -->
     <script>
         window.onload = function() {
             nes_load_url("nes-canvas", "Mappy.nes");
-        }
+        };
     </script>
 </head>
 <body>
