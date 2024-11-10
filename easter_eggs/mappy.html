@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mappy</title>
+    <title>Mappy Emulator</title>
     
     <!-- Include jsNES library -->
     <script src="https://unpkg.com/jsnes/dist/jsnes.min.js"></script>
     
-    <!-- Include your nes-embed.js file (ensure this path is correct) -->
+    <!-- Include your nes-embed.js file -->
     <script src="nes-embed.js"></script>
     
-    <!-- Load the ROM on page load -->
+    <!-- Add a function to start the emulator on button click -->
     <script>
-        window.onload = function() {
-            nes_load_url("nes-canvas", "mappy.nes");
-        };
+        function startEmulator() {
+            nes_load_url("nes-canvas", "Mappy.nes");
+        }
     </script>
 </head>
 <body>
@@ -26,5 +26,6 @@
         Start: Return, Select: Tab<br/>
         A Button: A, B Button: S
     </p>
+    <button onclick="startEmulator()">Start Mappy</button> <!-- Start Button -->
 </body>
 </html>
