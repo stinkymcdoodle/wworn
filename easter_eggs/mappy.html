@@ -16,10 +16,28 @@
             nes_load_url("nes-canvas", "mappy.nes");
         }
     </script>
+    
+    <!-- CSS to control the canvas size -->
+    <style>
+        #nes-canvas {
+            width: 50%; /* Adjust this to control the displayed size */
+            max-width: 200px; /* Maximum width for the emulator display */
+            height: auto; /* Maintain aspect ratio */
+        }
+        /* Center content on the page */
+        body, html {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <div style="margin: auto; width: 75%;">
-        <canvas id="nes-canvas" width="256" height="240" style="width: 100%;"></canvas>
+        <canvas id="nes-canvas" width="128" height="120" style="width: 100%;"></canvas>
     </div>
     <p>
         DPad: Arrow keys<br/>
