@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,35 +13,49 @@
             padding: 0;
         }
         .imgbox {
-            display: grid;
-            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         .center-fit {
             max-width: 100%;
-            max-height: 100vh;
-            margin: auto;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        .easter-egg {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        .easter-egg img {
+            width: 150px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        .easter-egg img:hover {
+            opacity: 1;
+        }
+        p {
+            text-align: center;
+            font-family: Verdana, sans-serif;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="imgbox">
-        <img src="/images/WWornweb.png" alt="Logo" class="center-fit"
-        display: block;
-        height="auto";
-        width="auto";
-        object-fit="contain";
-        >
+        <img src="/images/WWornweb.png" alt="Logo" class="center-fit">
     </div>
-    <p>&nbsp;</p>
-    <p style="font-family:verdana">the safe haven for my dreams and thoughts</p>
-    <p style="font-family:verdana">currently a work in progress, more designs and art soon.</p>
-    <p style="font-family:verdana">David Giorgi</p>
-    <p>&nbsp;</p>
+    <p>the safe haven for my dreams and thoughts</p>
+    <p>currently a work in progress, more designs and art soon.</p>
+    <p>David Giorgi</p>
+    
     <div class="easter-egg">
-    <a href="easter_eggs/jsnes/Mappy.html">
-        <img src="easter_eggs/SurprisedPatrick.png" alt="Surprised Patrick" style="width: 150px; cursor: pointer;">
-    </a>
-</div>
+        <a href="easter_eggs/jsnes/Mappy.html">
+            <img src="easter_eggs/SurprisedPatrick.png" alt="Surprised Patrick">
+        </a>
+    </div>
 </body>
-
 </html>
